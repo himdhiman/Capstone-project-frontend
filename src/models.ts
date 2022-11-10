@@ -19,5 +19,6 @@ export interface Transaction {
     accountTypeId: string | null,
     transactionType: string | null,
     transactionDate: string | null,
-    amount: number | null
+    amount: number | null,
+    credited: boolean
 }

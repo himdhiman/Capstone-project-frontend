@@ -21,7 +21,13 @@
                 <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{transaction.transactionId}}</td>
                 <td scope="row" class="py-4 px-6">{{transaction.transactionType}}</td>
                 <td scope="row" class="py-4 px-6">{{transaction.transactionDate}}</td>
-                <td scope="row" class="py-4 px-6"s>{{transaction.amount}}</td>
+                <ng-container *ngIf="transaction.credited; then first else second"></ng-container>
+                <ng-template #first>
+                    <td scope="row" class="py-4 px-6 text-green-900">{{"+" + transaction.amount}}</td>
+                </ng-template>
+                <ng-template #second>
+                    <td scope="row" class="py-4 px-6 text-red-900">{{"-" + transaction.amount}}</td>
+                </ng-template>
             </tr>
       </tbody>
     </table>
