@@ -1,0 +1,28 @@
+<div class="overflow-x-auto relative">
+    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="py-3 px-6">
+                    Transaction ID
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Transaction Type
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Trsansaction Date
+                </th>
+                <th scope="col" class="py-3 px-6">
+                    Amount
+                </th>
+            </tr>
+        </thead>
+      <tbody class="text-xs text-gray-700">
+            <tr *ngFor="let transaction of transactions" class="w-full text-xs text-left text-gray-500 dark:text-gray-400">
+                <td scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{transaction.transactionId}}</td>
+                <td scope="row" class="py-4 px-6">{{transaction.transactionType}}</td>
+                <td scope="row" class="py-4 px-6">{{transaction.transactionDate}}</td>
+                <td scope="row" class="py-4 px-6"s>{{transaction.amount}}</td>
+            </tr>
+      </tbody>
+    </table>
+  </div>
